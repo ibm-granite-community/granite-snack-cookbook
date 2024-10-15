@@ -6,10 +6,10 @@ on:
       - main
       - pm-143
     paths:
-      - recipes/Summarize/Summarize.ipynb
+      - 'recipes/Summarize/Summarize.ipynb'
       - 'recipes/RAG/RAG_with_Langchain.ipynb'
-      - recipes/Guard-Rails/HAP.ipynb
-      - recipes/PDL/Prompt_Declaration_Language.ipynb
+      - 'recipes/Guard-Rails/HAP.ipynb'
+      - 'recipes/PDL/Prompt_Declaration_Language.ipynb'
       - '.github/notebook_lists/vanilla_notebooks.txt'
   pull_request:
     branches:
@@ -17,10 +17,10 @@ on:
       - pm-143
     paths:
       - '.github/workflows/vanilla_workflow.yaml'
-      - recipes/Summarize/Summarize.ipynb
+      - 'recipes/Summarize/Summarize.ipynb'
       - 'recipes/RAG/RAG_with_Langchain.ipynb'
-      - recipes/Guard-Rails/HAP.ipynb
-      - recipes/PDL/Prompt_Declaration_Language.ipynb
+      - 'recipes/Guard-Rails/HAP.ipynb'
+      - 'recipes/PDL/Prompt_Declaration_Language.ipynb'
 
 jobs:
   test-vanilla-notebooks:
