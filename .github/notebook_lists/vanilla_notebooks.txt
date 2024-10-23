@@ -2,4 +2,5 @@ recipes/RAG/RAG_with_Langchain.ipynb
 recipes/Granite_Guardian/HAP.ipynb
 recipes/Entity-Extraction/entity_extraction.ipynb
 recipes/AI-Agents/Agentic_RAG.ipynb
+recipes/Function-Calling/Function_Calling.ipynb
 recipes/Summarize/Summarize.ipynb
