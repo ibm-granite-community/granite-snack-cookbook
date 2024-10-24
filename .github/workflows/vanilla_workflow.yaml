@@ -13,6 +13,7 @@ on:
       - '.github/notebook_lists/vanilla_notebooks.txt'
       - 'recipes/AI-Agents/Agentic_RAG.ipynb'
       - 'recipes/Summarize/Summarize.ipynb'
+      - 'recipes/Granite_Guardian/Granite_Guardian_Watsonx_Usage.ipynb'
   pull_request:
     branches:
       - main
@@ -25,6 +26,7 @@ on:
       - 'recipes/Granite_Guardian/HAP.ipynb'
       - 'recipes/AI-Agents/Agentic_RAG.ipynb'
       - 'recipes/Summarize/Summarize.ipynb'
+      - 'recipes/Granite_Guardian/Granite_Guardian_Watsonx_Usage.ipynb'
 
 jobs:
   test-vanilla-notebooks:
