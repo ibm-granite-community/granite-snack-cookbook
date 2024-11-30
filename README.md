@@ -57,6 +57,10 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Granite_Guardian/Granite_Guardian_Quick_Start.ipynb">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
+1. [Granite Guardian 3.0](recipes/Quantization/Post_Training_Quantization.md)
+   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Post_Training_Quantization.md">
+   <a target="_blank" href="https://www.ibm.com/think/tutorials/post-training-quantization"><img src="assets/carbon-for-ibm-dotcom.svg" height="23" alt="Open on IBM.com"/></a>
+
 
    
 ## Build Status
