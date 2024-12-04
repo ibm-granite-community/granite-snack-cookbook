@@ -1,0 +1,15 @@
+name: 'Additional Test Setup'
+description: 'Additional Test Setup for Ollama'
+runs:
+  using: "composite"
+  steps:
+    - name: Install Ollama and start server
+      shell: bash
+      run: |
+        curl -fsSL https://ollama.com/install.sh | sudo -E sh
+
+    - name: Wait for Ollama server
+      shell: bash
+      run: |
+        sleep 10
+        time curl -i http://localhost:11434
