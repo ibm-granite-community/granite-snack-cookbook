@@ -7,5 +7,6 @@ updates:
   - package-ecosystem: "github-actions"
     directories:
     - "/"
+    - ".github/actions/ollama-setup"
     schedule:
       interval: "daily"

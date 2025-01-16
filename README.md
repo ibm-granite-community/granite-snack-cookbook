@@ -18,6 +18,10 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Function-Calling/Function_Calling.ipynb">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
+1. [Invoice Extraction](recipes/Invoice-Extraction/Granite_Recipes_Invoices.ipynb)
+   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Invoice-Extraction/Granite_Recipes_Invoices.ipynb">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
 
 ### Compound Systems
 
@@ -39,6 +43,16 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
       <!-- <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/PDL/Prompt_Declaration_Language_python.ipynb">
       <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
       </a> --> (Not yet available in Colab, because the latter uses Python 3.10)
+1. [Docling for RAG](recipes/RAG/Granite_Docling_RAG.ipynb)
+   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/RAG/Granite_Docling_RAG.ipynb">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
+
+### Intrinsic Functions
+
+1. Retrieval Augmented Generation (RAG) with Granite RAG 3.0 8b
+   1. [Notebook that uses Ollama](recipes/Intrinsics/Granite_RAG_LoRA.ipynb) (Not available in Colab, because it requires a local Ollama server.)
+   1. [Notebook that uses Hugging Face Transformers and PEFT Libraries](recipes/Intrinsics/Granite_RAG_LoRA_HF.ipynb) (Not available in Colab, because it requires a >16GB memory)
 
 ### Tuning
 
@@ -76,7 +90,7 @@ For more background and a FAQ, please see the [community wiki](https://github.co
 
 ## Licenses
 
-The Granite Legal Cookbook's base license is CC BY 4.0.
+The Granite Snack Cookbook's base license is CC BY 4.0.
 
 Code in this repository, including in notebook cells, is licensed under Apache 2.0.
 

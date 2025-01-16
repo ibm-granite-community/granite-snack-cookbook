@@ -3,7 +3,7 @@
 # Run `pre-commit install` to activate pre-commit hooks
 repos:
   - repo: https://github.com/kynan/nbstripout
-    rev: 0.7.1
+    rev: 0.8.1
     hooks:
       - id: nbstripout
         args: [
