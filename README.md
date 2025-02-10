@@ -2,6 +2,63 @@
 
 The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities of IBM Granite models, in bite-sized instructional notebooks.
 
+## Environment Setup
+
+To set up the environment for running the notebooks in this repository, follow these steps:
+
+1. **Python Version**: Ensure you have Python 3.10 or 3.11 installed. You can download it from [python.org](https://www.python.org/downloads/).
+
+2. **Virtual Environment**: It is recommended to create a virtual environment to manage dependencies. You can create a virtual environment using the following command:
+   ```bash
+   python -m venv granite-env
+   ```
+
+3. **Activate Virtual Environment**:
+   - On Windows:
+     ```bash
+     .\granite-env\Scripts\activate
+     ```
+   - On macOS and Linux:
+     ```bash
+     source granite-env/bin/activate
+     ```
+
+4. **Install Dependencies**: Install the necessary dependencies using the following command:
+   ```bash
+   pip install git+https://github.com/ibm-granite-community/utils langchain_community langchain-huggingface langchain-milvus replicate wget
+   ```
+
+## Model Setup
+
+To download and set up the required models, follow these steps:
+
+1. **Granite RAG 3.0 8b Model**: Download the Granite RAG 3.0 8b model from [Hugging Face](https://huggingface.co/ibm-granite/granite-rag-3.0-8b).
+
+2. **Granite 3.0 8b Instruct Model**: Download the Granite 3.0 8b Instruct model from [Hugging Face](https://huggingface.co/ibm-granite/granite-3.0-8b-instruct).
+
+## Database Setup
+
+To set up the vector database, follow these steps:
+
+1. **Create Temporary File**: Create a temporary file for the database using the following command:
+   ```python
+   import tempfile
+   db_file = tempfile.NamedTemporaryFile(prefix="milvus_", suffix=".db", delete=False).name
+   print(f"The vector database will be saved to {db_file}")
+   ```
+
+2. **Configure Connection Arguments**: Configure the connection arguments for the database as shown in the example notebooks.
+
+## Running the Ollama Server
+
+To run the Ollama server before executing the notebooks, follow these steps:
+
+1. **Install Ollama**: Install Ollama and start the server using the script provided in `.github/actions/ollama-setup/action.yml`.
+
+2. **Wait for Server to Start**: Wait for the server to start and check its status by sending a request to `http://localhost:11434` as shown in the same script.
+
+3. **Ensure Server is Running**: Ensure the server is running before executing any notebooks that depend on it, such as those listed in `.github/notebook_lists/ollama_notebooks.txt`.
+
 ## Recipes
 
 ### Basic Capabilities
