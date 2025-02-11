@@ -14,3 +14,4 @@ recipes/Invoice-Extraction/Granite_Recipes_Invoices.ipynb
 recipes/Evaluation/Unitxt_Quick_Start.ipynb
 recipes/Evaluation/Unitxt_Demo_Strategies.ipynb
 recipes/Evaluation/Unitxt_Granite_as_Judge.ipynb
+recipes/Contract-Analysis/Granite_Recipes_Contracts_Analysis.ipynb
