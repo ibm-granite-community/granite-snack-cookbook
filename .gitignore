@@ -6,3 +6,4 @@ ibm_granite_community/__pycache__/
 build/
 .ipynb_checkpoints/
 log.txt
+.litellm_cache
