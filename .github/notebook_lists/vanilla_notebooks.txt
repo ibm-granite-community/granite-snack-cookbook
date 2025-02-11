@@ -11,3 +11,6 @@ recipes/Granite_Guardian/Granite_Guardian_Usage_Governance_Workflow.ipynb
 recipes/Granite_Guardian/Granite_Guardian_Watsonx_Usage.ipynb
 recipes/AI-Agents/travel_planner_agent.ipynb
 recipes/Invoice-Extraction/Granite_Recipes_Invoices.ipynb
+recipes/Evaluation/Unitxt_Quick_Start.ipynb
+recipes/Evaluation/Unitxt_Demo_Strategies.ipynb
+recipes/Evaluation/Unitxt_Granite_as_Judge.ipynb
