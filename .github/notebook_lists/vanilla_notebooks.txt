@@ -3,6 +3,7 @@ recipes/Function-Calling/Function_Calling.ipynb
 recipes/Summarize/Summarize.ipynb
 recipes/RAG/RAG_with_Langchain.ipynb
 recipes/RAG/Granite_Docling_RAG.ipynb
+recipes/RAG/Granite_Multimodal_RAG.ipynb
 recipes/Entity-Extraction/entity_extraction.ipynb
 recipes/Granite_Guardian/HAP.ipynb
 recipes/Granite_Guardian/Granite_Guardian_Quick_Start.ipynb
