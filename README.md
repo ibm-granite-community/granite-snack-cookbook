@@ -99,6 +99,10 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
 
+### Misc.
+
+1. [Use Granite 3.2 for Contract Analysis in Microsoft Word Locally](https://youtu.be/W9cluKPiX58)
+
 ## Build Status
 
 <a href="https://github.com/ibm-granite-community/granite-snack-cookbook/actions/workflows/notebooks.yaml">
