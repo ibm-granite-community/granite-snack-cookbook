@@ -1,4 +1,5 @@
 recipes/AI-Agents/Agentic_RAG.ipynb
+recipes/AI-Agents/Understanding_ReAct.ipynb
 recipes/Function-Calling/Function_Calling.ipynb
 recipes/Summarize/Summarize.ipynb
 recipes/RAG/RAG_with_Langchain.ipynb
