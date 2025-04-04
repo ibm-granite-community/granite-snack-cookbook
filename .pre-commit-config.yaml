@@ -10,3 +10,7 @@ repos:
           "--extra-keys", "metadata.language_info.version metadata.kernelspec",
           "--keep-metadata-keys", "cell.metadata.collapsed cell.metadata.scrolled",
         ]
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.17.2
+    hooks:
+    - id: markdownlint-cli2
