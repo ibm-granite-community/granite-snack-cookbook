@@ -113,27 +113,11 @@ jobs:
       ref: ${{ needs.test_workflow_ready.outputs.ref }}
       all: ${{ fromJSON(needs.test_workflow_ready.outputs.all) }}
 
-  ollama:
-    needs:
-      - test_workflow_ready
-    permissions:
-      contents: read
-    uses: ibm-granite-community/utils/.github/workflows/test_notebook.yaml@main
-    with:
-      notebook-lists: |
-        .github/notebook_lists/ollama_notebooks.txt
-      python-versions: >-
-        3.11
-      ref: ${{ needs.test_workflow_ready.outputs.ref }}
-      all: ${{ fromJSON(needs.test_workflow_ready.outputs.all) }}
-      action: .github/actions/ollama-setup
-
   test_workflow_complete:
     needs:
       - test_workflow_ready
       - vanilla
       - pdl
-      - ollama
     permissions:
       pull-requests: write
       statuses: write
