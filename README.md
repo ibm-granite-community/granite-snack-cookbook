@@ -71,7 +71,7 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
 1. Retrieval Augmented Generation (RAG) with Granite RAG 3.0 8b
-   1. [Notebook that uses Ollama](recipes/Intrinsics/Granite_RAG_LoRA.ipynb) (Not available in Colab, because it requires a local Ollama server.)
+   1. [Notebook that uses Ollama](recipes/Intrinsics/Granite_RAG.ipynb) (Not available in Colab, because it requires a local Ollama server.)
    1. [Notebook that uses Hugging Face Transformers and PEFT Libraries](recipes/Intrinsics/Granite_RAG_LoRA_HF.ipynb) (Not available in Colab, because it requires a >16GB memory)
 
 ### Tuning
