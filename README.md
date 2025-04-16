@@ -66,7 +66,7 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
 
 ### Intrinsic Functions
 
-1. [Chain-of-thought Reasoning in Granite](recipes/Intrinsics/Granite_Reasoning.ipynb)
+1. [Chain of thought (cot) reasoning](recipes/Intrinsics/Granite_Reasoning.ipynb)
    <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Intrinsics/Granite_Reasoning.ipynb">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
