@@ -51,10 +51,15 @@ jobs:
       status_url: ${{ steps.pr.outputs.status_url }}
       run_url: ${{ steps.pr.outputs.run_url }}
     steps:
+      - name: "Harden Runner"
+        uses: step-security/harden-runner@c95a14d0e5bab51a9f56296a4eb0e416910cd350 # v2.10.3
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
       - name: Checkout
         if: ${{ inputs.pr }}
         id: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           ref: ${{ inputs.pr && format('refs/pull/{0}/head',inputs.pr) || '' }}
 
@@ -124,6 +129,11 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ !cancelled() && (needs.test_workflow_ready.result == 'success') }}
     steps:
+      - name: "Harden Runner"
+        uses: step-security/harden-runner@c95a14d0e5bab51a9f56296a4eb0e416910cd350 # v2.10.3
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
       - name: Pull Request dispatch
         if: ${{ inputs.pr }}
         run: |
