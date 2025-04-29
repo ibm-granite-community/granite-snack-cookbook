@@ -102,6 +102,7 @@ jobs:
         3.11
       ref: ${{ needs.test_workflow_ready.outputs.ref }}
       all: ${{ fromJSON(needs.test_workflow_ready.outputs.all) }}
+      free-disk-space: '{"large-packages": false}'  # Takes a long time
 
   pdl:
     needs:
@@ -121,6 +122,7 @@ jobs:
         3.11
       ref: ${{ needs.test_workflow_ready.outputs.ref }}
       all: ${{ fromJSON(needs.test_workflow_ready.outputs.all) }}
+      free-disk-space: '{"large-packages": false}'  # Takes a long time
 
   test_workflow_complete:
     needs:
