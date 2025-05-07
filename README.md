@@ -66,10 +66,6 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Intrinsics/Granite_Reasoning.ipynb">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
-1. [Retrieval Augmented Generation (RAG) intrinsics in Granite](recipes/Intrinsics/Granite_RAG_Intrinsics.ipynb)
-   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Intrinsics/Granite_RAG_Intrinsics.ipynb">
-   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-   </a>
 1. [Retrieval Augmented Generation (RAG) with Granite RAG 3.0 8b](recipes/Intrinsics/Granite_RAG_LoRA_HF.ipynb) (Not available in Colab, because it requires a >16GB memory)
 
 ### Tuning

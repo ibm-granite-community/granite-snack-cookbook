@@ -17,4 +17,3 @@ recipes/Evaluation/Unitxt_Demo_Strategies.ipynb
 recipes/Evaluation/Unitxt_Granite_as_Judge.ipynb
 recipes/Contract-Analysis/Granite_Recipes_Contracts_Analysis.ipynb
 recipes/Intrinsics/Granite_Reasoning.ipynb
-recipes/Intrinsics/Granite_RAG_Intrinsics.ipynb
