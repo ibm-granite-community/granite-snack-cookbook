@@ -31,21 +31,17 @@ import requests
 import json
 import math
 import re
-import warnings
 import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import os
-#os.environ['TRANSFORMERS_CACHE'] ="./models/allmini/cache"
 import os.path
 from sentence_transformers import SentenceTransformer
-from umap import UMAP
-import tensorflow as tf
-from umap.parametric_umap import ParametricUMAP, load_ParametricUMAP
-from sentence_transformers import SentenceTransformer
 
-def populate_json(json_file_path = './prompt-sentences-main/prompt_sentences-all-minilm-l6-v2.json',
-                    existing_json_populated_file_path = './prompt-sentences-main/prompt_sentences-all-minilm-l6-v2.json'):
+def populate_json(
+    json_file_path = './prompt-sentences-main/prompt_sentences-granite-embedding-278m-multilingual.json',
+    existing_json_populated_file_path = './prompt-sentences-main/prompt_sentences-granite-embedding-278m-multilingual.json'
+):
     """
     Function that receives a default json file with
     empty embeddings and checks whether there is a
@@ -176,9 +172,15 @@ def sort_by_similarity(e):
     """
     return e['similarity']
 
-def recommend_prompt(prompt, prompt_json, embedding_fn = get_embedding_func('local', model_id='sentence-transformers/all-MiniLM-L6-v2'), add_lower_threshold = 0.3,
-                     add_upper_threshold = 0.5, remove_lower_threshold = 0.1,
-                     remove_upper_threshold = 0.5, model_id = 'sentence-transformers/all-MiniLM-L6-v2', get_xy = False):
+def recommend_prompt(
+    prompt, 
+    prompt_json, 
+    embedding_fn = get_embedding_func('local', model_id='ibm-granite/granite-embedding-278m-multilingual'),
+    add_lower_threshold = 0.3,
+    add_upper_threshold = 0.5,
+    remove_lower_threshold = 0.1,
+    remove_upper_threshold = 0.5,
+):
     """
     Function that recommends prompts additions or removals.
 
@@ -195,7 +197,7 @@ def recommend_prompt(prompt, prompt_json, embedding_fn = get_embedding_func('loc
         the default value is 0.3.
         remove_upper_threshold: Upper threshold for sentence removal,
         the default value is 0.5.
-        model_id: Id of the model, the default value is all-MiniLM-L6-v2 model.
+        model_id: Id of the model, the default value is granite-embedding-278m-multilingual model.
 
     Returns:
         Prompt values to add or remove.
@@ -203,28 +205,6 @@ def recommend_prompt(prompt, prompt_json, embedding_fn = get_embedding_func('loc
     Raises:
         Nothing.
     """
-
-    if get_xy:
-        if(model_id == 'baai/bge-large-en-v1.5' ):
-            json_file = './prompt-sentences-main/prompt_sentences-bge-large-en-v1.5.json'
-            umap_folder = './models/umap/BAAI/bge-large-en-v1.5/'
-        elif(model_id == 'intfloat/multilingual-e5-large'):
-            json_file = './prompt-sentences-main/prompt_sentences-multilingual-e5-large.json'
-            umap_model = load_ParametricUMAP('./models/umap/intfloat/multilingual-e5-large/')
-        elif(model_id == 'sentence-transformers/all-MiniLM-L6-v2'):
-            json_file = './prompt-sentences-main/prompt_sentences-all-MiniLM-L6-v2.json'
-            umap_folder = load_ParametricUMAP('./models/umap/sentence-transformers/all-MiniLM-L6-v2/')
-        else:
-            raise ValueError(f"get_xy set to True but Umap model file not found for {model_id}")
-        
-        # Loading the encoder and config separately due to a bug
-        encoder = tf.keras.models.load_model( umap_folder )
-        with open( f"{umap_folder}umap_config.json", "r" ) as f:
-            config = json.load( f )
-        umap_model = ParametricUMAP( encoder=encoder, **config )
-
-    if prompt_json is None:
-        prompt_json = json.load(open(json_file))
 
     # Output initialization
     out, out['input'], out['add'], out['remove'] = {}, {}, {}, {}
@@ -254,11 +234,6 @@ def recommend_prompt(prompt, prompt_json, embedding_fn = get_embedding_func('loc
                             'prompt': p['text'],
                             'similarity': d_prompt,
                         })
-                        if get_xy:
-                            items_to_add[-1].update({
-                                'x': p['x'],
-                                'y': p['y']
-                            })
                 out['add'] = items_to_add
 
     # Recommendation of values to remove from the current prompt
@@ -267,15 +242,11 @@ def recommend_prompt(prompt, prompt_json, embedding_fn = get_embedding_func('loc
     # Recommendation of values to remove from the current prompt
     for sentence in input_sentences:
         input_embedding = embedding_fn(sentence) # remote
-        if get_xy:
-            # Obtaining XY coords for input sentences from a parametric UMAP model
-            if(len(prompt_json['negative_values'][0]['centroid']) == len(input_embedding) and sentence != ''):
-                embeddings_umap = umap_model.transform(tf.expand_dims(pd.DataFrame(input_embedding), axis=0))
-                input_items.append({
-                    'sentence': sentence,
-                    'x': str(embeddings_umap[0][0]),
-                    'y': str(embeddings_umap[0][1])
-                })
+        # Obtaining XY coords for input sentences from a parametric UMAP model
+        if(len(prompt_json['negative_values'][0]['centroid']) == len(input_embedding) and sentence != ''):
+            input_items.append({
+                'sentence': sentence,
+            })
 
         for v in prompt_json['negative_values']:
         # Dealing with values without prompts and makinig sure they have the same dimensions
@@ -296,11 +267,6 @@ def recommend_prompt(prompt, prompt_json, embedding_fn = get_embedding_func('loc
                                 'closest_harmful_sentence': p['text'],
                                 'similarity': d_prompt,
                             })
-                            if get_xy:
-                                items_to_remove[-1].update({
-                                    'x': p['x'],
-                                    'y': p['y']
-                                })
             
                     out['remove'] = items_to_remove
         i += 1
@@ -326,14 +292,19 @@ def recommend_prompt(prompt, prompt_json, embedding_fn = get_embedding_func('loc
     out['remove'] = out['remove'][0:5]
     return out
 
-def get_thresholds(prompts, prompt_json, embedding_fn = get_embedding_func('local', model_id='sentence-transformers/all-MiniLM-L6-v2'), model_id = 'sentence-transformers/all-minilm-l6-v2'):
+def get_thresholds(
+    prompts,
+    prompt_json, 
+    embedding_fn = get_embedding_func('local', model_id='ibm-granite/granite-embedding-278m-multilingual'), 
+    model_id = 'ibm-granite/granite-embedding-278m-multilingual'
+):
     """
     Function that recommends thresholds given an array of prompts.
 
     Args:
         prompts: The array with samples of prompts to be used in the system.
         prompt_json: Sentences to be forwarded to the recommendation endpoint.
-        model_id: Id of the model, the default value is all-minilm-l6-v2 model.
+        model_id: Id of the model, the default value is granite-embedding-278m-multilingual model.
 
     Returns:
         A map with thresholds for the sample prompts and the informed model.
@@ -341,9 +312,6 @@ def get_thresholds(prompts, prompt_json, embedding_fn = get_embedding_func('loca
     Raises:
         Nothing.
     """
-    # Array limits for retrieving the thresholds
-    # if( len( prompts ) < 10 or len( prompts ) > 30 ):
-    #     return -1
     add_similarities = []
     remove_similarities = []
 
