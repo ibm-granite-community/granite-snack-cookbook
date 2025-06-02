@@ -6,6 +6,7 @@ recipes/RAG/RAG_with_Langchain.ipynb
 recipes/RAG/Granite_Docling_RAG.ipynb
 recipes/RAG/Granite_Multimodal_RAG.ipynb
 recipes/RAG/Inference_Scaling_RAG.ipynb
+recipes/RAG/RAG_with_LlamaIndex.ipynb
 recipes/Entity-Extraction/entity_extraction.ipynb
 recipes/Granite_Guardian/HAP.ipynb
 recipes/Granite_Guardian/Granite_Guardian_Quick_Start.ipynb
