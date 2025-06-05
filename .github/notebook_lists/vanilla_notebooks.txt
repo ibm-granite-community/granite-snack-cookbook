@@ -19,3 +19,4 @@ recipes/Evaluation/Unitxt_Granite_as_Judge.ipynb
 recipes/Contract-Analysis/Granite_Recipes_Contracts_Analysis.ipynb
 recipes/Intrinsics/Granite_Reasoning.ipynb
 recipes/Embeddings/Responsible_Prompting.ipynb
+recipes/Tool-Calling/Automatic_Tool_Calling.ipynb
