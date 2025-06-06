@@ -23,6 +23,11 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
 
+1. [Tool Calling](recipes/Tool-Calling/Automatic_Tool_Calling.ipynb)
+   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Tool-Calling/Automatic_Tool_Calling.ipynb">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
+
 ### Compound Systems
 
 1. [RAG - LangChain](/recipes/RAG/RAG_with_Langchain.ipynb)
