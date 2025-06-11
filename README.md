@@ -25,6 +25,11 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
 1. [Tool Calling](recipes/Tool-Calling/Automatic_Tool_Calling.ipynb)(Not compatible with Colab)
 1. [Structured Responses](recipes/Structured_Response/Structured_Responses_LMStudio.ipynb)(Not compatible with Colab)
 
+1. [DevOps Tools](recipes/DevOps-Tools/Log_Analyzer_Using_Granite.ipynb)
+   <a target="_blank" href="https://colab.research.google.com/drive/1w5x-twt5xDIwiKpWX_x0F5bU2pWblO7y?usp=sharing">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
+
 ### Compound Systems
 
 1. [RAG - LangChain](/recipes/RAG/RAG_with_Langchain.ipynb)
