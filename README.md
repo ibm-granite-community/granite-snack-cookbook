@@ -28,6 +28,11 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
 
+1. [Structured Responses](recipes/Structured_Response/Structured_Responses_LMStudio.ipynb)
+   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/recipes/Structured_Response/Structured_Responses_LMStudio.ipynb">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
+
 ### Compound Systems
 
 1. [RAG - LangChain](/recipes/RAG/RAG_with_Langchain.ipynb)
