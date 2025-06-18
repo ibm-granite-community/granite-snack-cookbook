@@ -23,19 +23,10 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
 
-1. [Tool Calling](recipes/Tool-Calling/Automatic_Tool_Calling.ipynb)
-   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Tool-Calling/Automatic_Tool_Calling.ipynb">
-   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-   </a>
-
 ### Compound Systems
 
-1. [RAG - LangChain](/recipes/RAG/RAG_with_Langchain.ipynb)
+1. [RAG](/recipes/RAG/RAG_with_Langchain.ipynb)
    <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/RAG/RAG_with_Langchain.ipynb">
-   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-   </a>
-1. [RAG - LlamaIndex](recipes/RAG/RAG_with_LlamaIndex.ipynb)
-   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/RAG/RAG_with_LlamaIndex.ipynb">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
 1. [Understanding ReAct](recipes/AI-Agents/Understanding_ReAct.ipynb)
@@ -74,6 +65,9 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    </a>
 1. [Responsible Prompting](recipes/Embeddings/Responsible_Prompting.ipynb)
    <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Embeddings/Responsible_Prompting.ipynb">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
+1. [Model Context Protocol](recipes/Model-Context-Protocol/Model_Context_Protocol.ipynb)<a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Model-Context-Protocol/Model_Context_Protocol.ipynb">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
 
