@@ -22,16 +22,8 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Contract-Analysis/Granite_Recipes_Contracts_Analysis.ipynb">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
-
-1. [Tool Calling](recipes/Tool-Calling/Automatic_Tool_Calling.ipynb)
-   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Tool-Calling/Automatic_Tool_Calling.ipynb">
-   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-   </a>
-
-1. [Structured Responses](recipes/Structured_Response/Structured_Responses_LMStudio.ipynb)
-   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/recipes/Structured_Response/Structured_Responses_LMStudio.ipynb">
-   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-   </a>
+1. [Tool Calling](recipes/Tool-Calling/Automatic_Tool_Calling.ipynb)(Not compatible with Colab)
+1. [Structured Responses](recipes/Structured_Response/Structured_Responses_LMStudio.ipynb)(Not compatible with Colab)
 
 ### Compound Systems
 
