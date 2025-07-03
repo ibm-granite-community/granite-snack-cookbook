@@ -7,3 +7,5 @@ build/
 .ipynb_checkpoints/
 log.txt
 .litellm_cache
+recipes/DevOps-Tools/report.json
+recipes/DevOps-Tools/sample_logs.zip
