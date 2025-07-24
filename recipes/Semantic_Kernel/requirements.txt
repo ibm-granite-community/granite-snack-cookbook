@@ -1,3 +1,3 @@
-ollama
-semantic-kernel
-ipywidgets
+semantic-kernel>=1.0.0
+requests>=2.25.0
+ipywidgets>=7.6.0
