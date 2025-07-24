@@ -1,0 +1,3 @@
+ollama
+semantic-kernel
+ipywidgets
