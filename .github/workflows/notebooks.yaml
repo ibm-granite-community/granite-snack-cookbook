@@ -98,8 +98,8 @@ jobs:
       notebook-lists: |
         .github/notebook_lists/vanilla_notebooks.txt
       python-versions: >-
-        3.10
         3.11
+        3.12
       ref: ${{ needs.test_workflow_ready.outputs.ref }}
       all: ${{ fromJSON(needs.test_workflow_ready.outputs.all) }}
       free-disk-space: '{"large-packages": false}'  # Takes a long time
