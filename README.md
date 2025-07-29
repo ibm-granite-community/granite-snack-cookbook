@@ -77,7 +77,14 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Model-Context-Protocol/Model_Context_Protocol.ipynb">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
-1. [Microsoft Semantic Kernel Chat](recipes/Semantic_Kernel/granite_semantic_kernel_chat.ipynb)(Not compatible with Colab - requires Ollama)
+1. [Agent Communication Protocol](recipes/Agent-Communication-Protocol/Agent_Communication_Protocol.ipynb)  
+   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Agent-Communication-Protocol/Agent_Communication_Protocol.ipynb">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
+1. [Microsoft Semantic Kernel Chat](recipes/Semantic_Kernel/granite_semantic_kernel_chat.ipynb)  
+   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Semantic_Kernel/granite_semantic_kernel_chat.ipynb">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
 
 ### Intrinsic Functions
 
