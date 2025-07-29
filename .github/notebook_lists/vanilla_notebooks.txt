@@ -21,4 +21,3 @@ recipes/Contract-Analysis/Granite_Recipes_Contracts_Analysis.ipynb
 recipes/Intrinsics/Granite_Reasoning.ipynb
 recipes/Embeddings/Responsible_Prompting.ipynb
 recipes/Model-Context-Protocol/Model_Context_Protocol.ipynb
-recipes/Semantic_Kernel/granite_semantic_kernel_chat.ipynb
