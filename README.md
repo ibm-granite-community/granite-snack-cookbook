@@ -104,6 +104,10 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Load_LoRA_from_Huggingface/Load_LoRA_From_Huggingface.ipynb">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
    </a>
+1. [Fine Tuning Granite - Unsloth](recipes/Fine_Tuning/FineTuning_with_Unsloth.ipynb)
+   <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Fine_Tuning/FineTuning_with_Unsloth.ipynb">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
 
 ### Model Evaluation
 
