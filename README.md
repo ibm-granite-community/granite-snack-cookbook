@@ -4,6 +4,10 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
 
 ## Recipes
 
+### Getting Started
+
+1. [Using IBM Granite 3.3 on watsonx.ai](/recipes/Getting-Started/granite_watsonx_quickstart.ipynb)(Not compatible with Colab)
+
 ### Basic Capabilities
 
 1. [Document Summarization](/recipes/Summarize/Summarize.ipynb)
