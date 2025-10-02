@@ -2,7 +2,7 @@ recipes/AI-Agents/Agentic_RAG.ipynb
 recipes/AI-Agents/Understanding_ReAct.ipynb
 recipes/Function-Calling/Function_Calling.ipynb
 recipes/Summarize/Summarize.ipynb
-ecipes/Summarize/Summarize_text_AAiW.ipynb
+recipes/Summarize/Summarize_text_AAiW.ipynb
 recipes/RAG/RAG_with_Langchain.ipynb
 recipes/RAG/Granite_Docling_RAG.ipynb
 recipes/RAG/Granite_Multimodal_RAG.ipynb
