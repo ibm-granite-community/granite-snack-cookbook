@@ -57,7 +57,7 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    1. [Notebook that uses the PDL Python API](recipes/PDL/Prompt_Declaration_Language_python.ipynb)
       <!-- <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/PDL/Prompt_Declaration_Language_python.ipynb">
       <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-      </a> --> (Not yet available in Colab, because the latter uses Python 3.10)
+      </a> --> (Not available in Colab)
 1. [Docling for RAG](recipes/RAG/Granite_Docling_RAG.ipynb)
    <a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/RAG/Granite_Docling_RAG.ipynb">
    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
