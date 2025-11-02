@@ -22,3 +22,4 @@ recipes/Intrinsics/Granite_Reasoning.ipynb
 recipes/Embeddings/Responsible_Prompting.ipynb
 recipes/Model-Context-Protocol/Model_Context_Protocol.ipynb
 recipes/Agent-Communication-Protocol/Agent_Communication_Protocol.ipynb
+recipes/Structured_Response/Structured_Responses_Pydantic_Ollama.ipynb
