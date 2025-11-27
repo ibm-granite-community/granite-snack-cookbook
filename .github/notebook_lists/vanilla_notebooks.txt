@@ -20,7 +20,6 @@ recipes/Evaluation/Unitxt_Quick_Start.ipynb
 recipes/Evaluation/Unitxt_Demo_Strategies.ipynb
 recipes/Evaluation/Unitxt_Granite_as_Judge.ipynb
 recipes/Contract-Analysis/Granite_Recipes_Contracts_Analysis.ipynb
-recipes/Intrinsics/Granite_Reasoning.ipynb
 recipes/Embeddings/Responsible_Prompting.ipynb
 recipes/Model-Context-Protocol/Model_Context_Protocol.ipynb
 recipes/Agent-Communication-Protocol/Agent_Communication_Protocol.ipynb
