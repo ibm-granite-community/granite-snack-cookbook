@@ -24,7 +24,6 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    </a>
 1. [Tool Calling](recipes/Tool-Calling/Automatic_Tool_Calling.ipynb)(Not compatible with Colab)
 1. [Structured Responses](recipes/Structured_Response/Structured_Responses_LMStudio.ipynb)(Not compatible with Colab)
-1. [Speech](recipes/Speech/speech.ipynb)(Not compatible with Colab)
 
 ### Compound Systems
 
