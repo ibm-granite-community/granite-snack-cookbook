@@ -13,3 +13,8 @@ runs:
       run: |
         sleep 10
         time curl -i http://localhost:11434
+
+    - name: Pull Granite models
+      shell: bash
+      run: |
+        ollama pull ibm/granite4:micro
