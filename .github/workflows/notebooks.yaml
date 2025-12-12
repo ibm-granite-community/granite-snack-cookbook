@@ -17,6 +17,7 @@ on:
       - main
     paths:
       - '.github/workflows/notebooks.yaml' # This workflow
+      - '.github/actions/**' # Possibly used by this workflow
       - '.github/notebook_lists/*' # Notebook lists
       - 'recipes/**/*.ipynb'
   pull_request:
@@ -24,6 +25,7 @@ on:
       - main
     paths:
       - '.github/workflows/notebooks.yaml' # This workflow
+      - '.github/actions/**' # Possibly used by this workflow
       - '.github/notebook_lists/*' # Notebook lists
       - 'recipes/**/*.ipynb'
 
@@ -52,7 +54,7 @@ jobs:
       run_url: ${{ steps.pr.outputs.run_url }}
     steps:
       - name: "Harden Runner"
-        uses: step-security/harden-runner@df199fb7be9f65074067a9eb93f12bb4c5547cf2 # v2.13.3
+        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
         with:
           disable-sudo-and-containers: true
           egress-policy: block
@@ -124,11 +126,28 @@ jobs:
       all: ${{ fromJSON(needs.test_workflow_ready.outputs.all) }}
       free-disk-space: '{"large-packages": false}'  # Takes a long time
 
+  ollama:
+    needs:
+      - test_workflow_ready
+    permissions:
+      contents: read
+    uses: ibm-granite-community/utils/.github/workflows/test_notebook.yaml@main
+    with:
+      notebook-lists: |
+        .github/notebook_lists/ollama_notebooks.txt
+      python-versions: >-
+        3.11
+      ref: ${{ needs.test_workflow_ready.outputs.ref }}
+      all: ${{ fromJSON(needs.test_workflow_ready.outputs.all) }}
+      action: .github/actions/ollama-setup
+      free-disk-space: '{"large-packages": false}'  # Takes a long time
+
   test_workflow_complete:
     needs:
       - test_workflow_ready
       - vanilla
       - pdl
+      - ollama
     permissions:
       pull-requests: write
       statuses: write
@@ -136,7 +155,7 @@ jobs:
     if: ${{ !cancelled() && (needs.test_workflow_ready.result == 'success') }}
     steps:
       - name: "Harden Runner"
-        uses: step-security/harden-runner@df199fb7be9f65074067a9eb93f12bb4c5547cf2 # v2.13.3
+        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
         with:
           disable-sudo-and-containers: true
           egress-policy: block
