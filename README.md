@@ -24,6 +24,9 @@ The "Recipes" in the Granite Snack Cookbook showcase the essential capabilities 
    </a>
 1. [Tool Calling](recipes/Tool-Calling/Automatic_Tool_Calling.ipynb)(Not compatible with Colab)
 1. [Structured Responses](recipes/Structured_Response/Structured_Responses_LMStudio.ipynb)(Not compatible with Colab)
+1. [Structured Responses with Pydantic](recipes/Structured_Response/Structured_Responses_Pydantic.ipynb)<a target="_blank" href="https://colab.research.google.com/github/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/Structured_Response/Structured_Responses_Pydantic.ipynb">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
 
 ### Compound Systems
 
