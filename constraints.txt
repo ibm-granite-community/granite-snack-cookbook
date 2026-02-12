@@ -1,3 +1,5 @@
 # https://github.com/milvus-io/pymilvus/issues/2749
 pymilvus!=2.5.7
 milvus_lite!=2.5.0
+# milvus_lite 2.5.1 uses deprecated pkg_resources removed in setuptools 82.0.0 https://setuptools.pypa.io/en/stable/history.html#v82-0-0
+setuptools<82.0.0
