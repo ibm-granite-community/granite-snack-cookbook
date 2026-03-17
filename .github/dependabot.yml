@@ -10,3 +10,5 @@ updates:
     - ".github/actions/ollama-setup"
     schedule:
       interval: "daily"
+    cooldown:
+      default-days: 7
