@@ -1,0 +1,41 @@
+name: 'python_setup'
+description: 'Setup for Python and uv'
+
+inputs:
+  python-version:
+    description: 'Python version, supporting MAJOR.MINOR only'
+    required: true
+    type: string
+  uv-version:
+    description: 'uv version, default latest'
+    required: false
+    type: string
+    default: 'latest'
+  enable-cache:
+    description: 'Enable caching uv cache, default true'
+    required: false
+    type: boolean
+    default: true
+  save-cache:
+    description: 'Save the uv cache, false if pull_request'
+    required: false
+    type: boolean
+    default: ${{ github.event_name != 'pull_request' }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: 'Setup Python ${{ inputs.python-version }}'
+      id: setup-python
+      uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+      with:
+        python-version: ${{ inputs.python-version }}
+
+    - name: 'Setup uv ${{ inputs.uv-version }}'
+      id: setup-uv
+      uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+      with:
+        python-version: ${{ steps.setup-python.outputs.python-version }}
+        version: ${{ inputs.uv-version }}
+        enable-cache: ${{ inputs.enable-cache }}
+        save-cache: ${{ inputs.save-cache }}

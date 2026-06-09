@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: Apache-2.0
+
+spellchecker: aspell
+
+matrix:
+- name: markdown
+  aspell:
+    lang: en
+    d: en_US
+    camel-case: true
+    mode: markdown
+  sources:
+  - "**/*.md|!.tox/**|!venv/**|!.venv/**|!**/llama.cpp/**"
+  dictionary:
+    wordlists:
+    - .spellcheck-en-custom.txt
+  pipeline:
+  - pyspelling.filters.context:
+      context_visible_first: true
+      escapes: '\\[\\`~]'
+      delimiters:
+      # Ignore multiline content between fences (fences can have 3 or more back ticks)
+      # ```language
+      # content
+      # ```
+      - open: '(?s)^(?P<open> *`{3,}).*?$'
+        close: '^(?P=open)$'
+      # Ignore text between inline back ticks
+      - open: '(?P<open>`+)'
+        close: '(?P=open)'

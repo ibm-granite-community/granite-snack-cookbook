@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+
+ignoreForks: true
+
+skip:
+- rule: github_action_from_unverified_creator_used
+- rule: unverified_script_exec
+  path: .github/actions/ollama-setup/action.yml

@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+
+version: 3
+min_age: # cooldown
+  value: 7
+ignore_actions:
+  - name: ibm-granite-community/utils/.github/workflows/test_notebook.yaml
+    ref: main

@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: Apache-2.0
+
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        "ibm-granite-community/utils/.github/workflows/test_notebook.yaml": ref-pin
