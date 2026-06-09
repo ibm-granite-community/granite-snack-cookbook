@@ -7,3 +7,6 @@ build/
 .ipynb_checkpoints/
 log.txt
 .litellm_cache
+
+# Ignore all dictionary files
+*.dic

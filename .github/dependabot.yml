@@ -7,8 +7,15 @@ updates:
   - package-ecosystem: "github-actions"
     directories:
     - "/"
-    - ".github/actions/ollama-setup"
+    - ".github/actions"
     schedule:
       interval: "daily"
     cooldown:
       default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+      - "github_actions"

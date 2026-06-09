@@ -1,0 +1,62 @@
+# SPDX-License-Identifier: Apache-2.0
+
+name: Spellcheck
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**.md'
+      - '.spellcheck*'
+      - '.github/workflows/spellcheck.yaml' # This workflow file
+
+env:
+  LC_ALL: en_US.UTF-8
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: read
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Harden Runner"
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            *.archive.ubuntu.com:80
+            *.microsoft.com:443
+            api.github.com:443
+            esm.ubuntu.com:443
+            files.pythonhosted.org:443
+            github.com:443
+            pypi.org:443
+            raw.githubusercontent.com:443
+            release-assets.githubusercontent.com:443
+            releases.astral.sh:443
+
+      - name: 'Checkout'
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+
+      - name: 'Setup Python'
+        uses: ./.github/actions/python_setup
+        with:
+          python-version: 3.12
+          enable-cache: false
+
+      - name: 'Install aspell'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y aspell aspell-en
+
+      - name: 'Check spelling'
+        run: |
+          uvx -- pyspelling --config .spellcheck.yaml
