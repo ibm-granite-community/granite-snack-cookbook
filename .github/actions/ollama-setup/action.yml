@@ -12,7 +12,8 @@ runs:
       shell: bash
       run: |
         sleep 10
-        time curl -i http://localhost:11434
+        curl --include --retry 10 --retry-delay 10 --retry-connrefused http://localhost:11434
+
 
     - name: Pull Granite models
       shell: bash
