@@ -7,6 +7,7 @@ on:
       - "main"
     paths:
       - '.github/workflows/*.ya?ml'
+      - '.github/actions/**/action.ya?ml'
       - '.github/zizmor.ya?ml'
       - '.poutine.ya?ml'
   pull_request:
@@ -14,6 +15,7 @@ on:
       - "main"
     paths:
       - '.github/workflows/*.ya?ml'
+      - '.github/actions/**/action.ya?ml'
       - '.github/zizmor.ya?ml'
       - '.poutine.ya?ml'
 
