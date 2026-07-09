@@ -5,3 +5,6 @@ rules:
     config:
       policies:
         "ibm-granite-community/utils/.github/workflows/test_notebook.yaml": ref-pin
+  dangerous-triggers:
+      ignore:
+          - "dependabot_merge.yaml"
