@@ -9,7 +9,7 @@ on:
     paths:
       - '**.md'
       - '.spellcheck*'
-      - '.github/workflows/spellcheck.yaml' # This workflow file
+      - '.github/workflows/spellcheck.ya?ml' # This workflow file
 
 env:
   LC_ALL: en_US.UTF-8
