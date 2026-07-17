@@ -21,7 +21,6 @@ jobs:
     permissions:
       pull-requests: write
       contents: write
-    name: "Check auto-merge"
     runs-on: ubuntu-latest
     steps:
       - name: "Fetch Dependabot Metadata"
@@ -29,10 +28,75 @@ jobs:
         uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: "Enable auto-merge"
+      - name: "Wait for PR checks"
+        id: wait-for-pr-checks
         if: ${{ contains(fromJSON('["version-update:semver-minor","version-update:semver-patch"]'), steps.dependabot-metadata.outputs.update-type) }}
         run: |
-          gh pr merge --auto --merge "$PR_URL"
+          # ---- Config -----------------------------------------------------
+          # Name of the current job's check, as it appears in `gh pr checks`.
+          # Defaults to GITHUB_JOB; override via SELF_CHECK_NAME if the
+          # displayed check name differs (e.g. "workflow / job" style names).
+          SELF_CHECK_NAME="${SELF_CHECK_NAME:-${GITHUB_JOB:-}}"
+          POLL_INTERVAL="${POLL_INTERVAL:-15}"
+          TIMEOUT="${TIMEOUT:-1800}"
+          # -------------------------------------------------------------------
+
+          if [[ -z "${PR:-}" ]]; then
+            PR_ARGS=()
+          else
+            PR_ARGS=("$PR")
+          fi
+
+          echo "Waiting on checks for PR ${PR:-<inferred>} (excluding check: '${SELF_CHECK_NAME:-none}')"
+
+          start_time=$(date +%s)
+
+          while true; do
+            now=$(date +%s)
+            elapsed=$(( now - start_time ))
+            if (( elapsed > TIMEOUT )); then
+              echo "::error::Timed out after ${TIMEOUT}s waiting for checks to complete."
+              exit 1
+            fi
+
+            # Pull current checks as JSON, excluding our own check by name.
+            checks_json=$(gh pr checks "${PR_ARGS[@]}" --json name,state,bucket,link \
+              -q "[.[] | select(.name != \"${SELF_CHECK_NAME}\")]")
+
+            total=$(jq 'length' <<<"$checks_json")
+
+            if (( total == 0 )); then
+              echo "No other checks found on this PR."
+              exit 0
+            fi
+
+            pending=$(jq '[.[] | select(.bucket == "pending" or .state == "IN_PROGRESS" or .state == "QUEUED")] | length' <<<"$checks_json")
+            failed=$(jq '[.[] | select(.bucket == "fail")]' <<<"$checks_json")
+            failed_count=$(jq 'length' <<<"$failed")
+
+            echo "[$(date -u +%H:%M:%S)] ${total} check(s) tracked, ${pending} still pending, ${failed_count} failed so far."
+
+            # Fail fast as soon as any check reports a failure.
+            if (( failed_count > 0 )); then
+              echo "::error::One or more checks failed:"
+              jq -r '.[] | "  - \(.name): \(.state) (\(.link))"' <<<"$failed"
+              exit 1
+            fi
+
+            if (( pending == 0 )); then
+              echo "All checks completed successfully."
+              exit 0
+            fi
+
+            sleep "$POLL_INTERVAL"
+          done
         env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PR: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Auto Merge"
+        if: ${{ steps.wait-for-pr-checks.outcome == 'success' }}
+        run: |
+          gh pr merge "$PR" --auto --merge
+        env:
+          PR: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
