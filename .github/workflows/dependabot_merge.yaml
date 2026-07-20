@@ -39,6 +39,15 @@ jobs:
           SELF_CHECK_NAME="${SELF_CHECK_NAME:-${GITHUB_JOB:-}}"
           POLL_INTERVAL="${POLL_INTERVAL:-15}"
           TIMEOUT="${TIMEOUT:-1800}"
+          # Comma-separated list of substrings; any check whose name
+          # CONTAINS one of these substrings is ignored entirely (e.g.
+          # checks that are known-noisy or irrelevant to gating this PR).
+          # SELF_CHECK_NAME is always excluded separately above; this list
+          # is for anything else.
+          IGNORE_CHECK_NAMES="${IGNORE_CHECK_NAMES:-StepSecurity}"
+
+          # Build a JSON array from the comma-separated list for use in jq.
+          IGNORE_CHECKS_JSON=$(printf '%s\n' "$IGNORE_CHECK_NAMES" | jq -R 'split(",") | map(gsub("^\\s+|\\s+$"; ""))')
           # -------------------------------------------------------------------
 
           if [[ -z "${PR:-}" ]]; then
@@ -59,9 +68,10 @@ jobs:
               exit 1
             fi
 
-            # Pull current checks as JSON, excluding our own check by name.
-            checks_json=$(gh pr checks "${PR_ARGS[@]}" --json name,state,bucket,link \
-              -q "[.[] | select(.name != \"${SELF_CHECK_NAME}\")]")
+            # Pull current checks as JSON, excluding our own check and any
+            # other checks whose name contains one of the
+            # IGNORE_CHECK_NAMES substrings.
+            checks_json=$(gh pr checks "${PR_ARGS[@]}" --json name,state,bucket,link --jq "[.[] | select(.name != \"${SELF_CHECK_NAME}\") | select((.name as \$n | $IGNORE_CHECKS_JSON | any(. as \$s | \$n | contains(\$s))) | not)]")
 
             total=$(jq 'length' <<<"$checks_json")
 
