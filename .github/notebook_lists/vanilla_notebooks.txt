@@ -14,7 +14,6 @@ recipes/Granite_Guardian/HAP.ipynb
 recipes/Granite_Guardian/Granite_Guardian_Quick_Start.ipynb
 recipes/Granite_Guardian/Granite_Guardian_Detailed_Guide.ipynb
 recipes/Granite_Guardian/Granite_Guardian_Usage_Governance_Workflow.ipynb
-recipes/Granite_Guardian/Granite_Guardian_Watsonx_Usage.ipynb
 recipes/AI-Agents/travel_planner_agent.ipynb
 recipes/Evaluation/Unitxt_Quick_Start.ipynb
 recipes/Evaluation/Unitxt_Demo_Strategies.ipynb
