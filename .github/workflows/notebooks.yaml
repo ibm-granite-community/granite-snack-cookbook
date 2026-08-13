@@ -97,6 +97,7 @@ jobs:
       WATSONX_APIKEY: ${{ secrets.WATSONX_APIKEY }}
       WATSONX_PROJECT_ID: ${{ secrets.WATSONX_PROJECT_ID }}
       WATSONX_URL: ${{ secrets.WATSONX_URL }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
     with:
       notebook-lists: |
         .github/notebook_lists/vanilla_notebooks.txt
