@@ -13,7 +13,7 @@ repos:
           "--keep-metadata-keys", "cell.metadata.collapsed cell.metadata.scrolled",
         ]
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.22.1
+    rev: v0.23.2
     hooks:
     - id: markdownlint-cli2
   - repo: 'https://github.com/facelessuser/pyspelling.git'
