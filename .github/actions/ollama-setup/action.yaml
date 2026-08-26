@@ -18,4 +18,4 @@ runs:
     - name: Pull Granite models
       shell: bash
       run: |
-        ollama pull granite4.1:3b
+        ollama pull granite4.2:3b
