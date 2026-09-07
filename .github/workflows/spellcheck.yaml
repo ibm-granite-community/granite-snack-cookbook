@@ -47,7 +47,7 @@ jobs:
           persist-credentials: false
 
       - name: 'Setup Python'
-        uses: ./.github/actions/python_setup
+        uses: $/.github/actions/python_setup
         with:
           python-version: 3.12
           enable-cache: false
